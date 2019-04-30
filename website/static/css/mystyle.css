@@ -1,0 +1,188 @@
+html {
+  font-size: 10px;
+}
+.top-menu {
+  /*background: #0008;*/
+  background-color: #00b5ad;
+  color: #fff;
+  padding-top: 2rem;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 5rem;
+}
+
+.top-menu .column {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+
+.nav-btn {
+  margin-top: 1rem;
+}
+.nav-btn .column {
+  text-align: center;
+}
+.nav-btn .column img{
+  width: 5rem;
+}
+
+
+.article-list {
+  margin-top: 2rem;
+}
+
+.article-list .article-item {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.article-item img{
+  width: 100%;
+  float: left;
+
+  border-radius: 1rem;
+}
+
+.article-item .title {
+  background: #0006;
+  height: 3rem;
+  float: left;
+  width: 100%;
+  margin-top: -3rem;
+  color: #fff;
+  padding-left: 5px;
+  padding-right: 5px;
+  line-height: 3rem;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.article-item .title span {
+  float: right;
+}
+
+.clear{
+  clear:both
+}
+
+.tabBar {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  height: 4rem;
+}
+
+.tabBar .ui.grid {
+  margin-top:0;
+}
+.tabBar .column {
+  text-align: center;
+}
+
+#login {
+
+}
+
+#login .userUi{
+  position: fixed;
+  top: 20rem;
+  width: 100%;
+  height: 20rem;
+}
+
+#login .userUi .ui.container {
+  background:#fff;
+  padding: 1rem 1rem 1rem 1rem;
+  border: 1px solid #efefef;
+  text-align: center;
+}
+
+#login .userUi .ui.container button{
+  background: #fff;
+  width: 10rem;
+  height: 3rem;
+  margin-left: 1rem;
+  border: 1px solid #b9b9b9;
+  border-radius: 1.5rem;
+}
+
+#login .userUi .ui.container .item{
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 4rem;
+}
+#login .userUi .ui.container .item input{
+  width: 100%;
+  height: 100%;
+  border: 1px solid #b9b9b9;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+/*html{*/
+    /*font-size: 10px;*/
+/*}*/
+/*.top_menu{*/
+    /*background: #0005;*/
+    /*color: #fff;*/
+    /*padding: 1rem;*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*z-index: 999;*/
+    /*width: 100%;*/
+    /*height: 4rem;*/
+/*}*/
+/*.top_menu .column{*/
+    /*text-align: center;*/
+    /*font-size: 1.5rem;*/
+    /*line-height: 1.5rem;*/
+/*}*/
+/*#banner{*/
+    /*!*margin-top: 4rem;*!*/
+
+/*}*/
+
+
+/*.nav-btn .column img{*/
+    /*width: 1rem;*/
+/*}*/
+/*.nav-btn .column{*/
+    /*text-align: center;*/
+/*}*/
+
+/*#login{*/
+    /*position: fixed;*/
+    /*top: 20rem;*/
+/*}*/
+
+/*#login .userUi{*/
+    /*width: 100%;*/
+    /*height: 20rem;*/
+/*}*/
+
+/*#login .userUi .ui.container{*/
+    /*background: #fff;*/
+    /*padding: 1rem 1rem 1rem 1rem;*/
+    /*border: 1px solid #efefef;*/
+    /*text-align: center;*/
+/*}*/
+/*#login .userUi .ui.container button{*/
+    /*background: #fff;*/
+/*}*/
+
+/*#login .userUi .ui.container .item{*/
+    /*width: 100%;*/
+    /*height: 4rem;*/
+    /*margin-bottom: 1rem;*/
+/*}*/
+/*#login .userUi .ui.container .item input{*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*border: 1px solid #b9b9b9;*/
+    /*border-radius: 2rem;*/
+    /*text-align: center;*/
+/*}*/

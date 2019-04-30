@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Django</title>
+    <link rel="stylesheet" href="{% static 'css/semantic.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
+</head>
+
+<body>
+    {% verbatim %}
+    <div id="index">
+        <!--顶部导航栏-->
+        <div class="top_menu">
+            <div class="container">
+                <div class="ui four column grid">
+
+                    <div v-for="item in topmenu" class="column">
+                      {{ item.title }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--首页幻灯-->
+        <div id="banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                      <img src="{% static 'img/1.jpg' %}" width="500" height="332">
+                  </div>
+                  <div class="swiper-slide">
+                      <img src="{% static 'img/2.jpg' %}" width="500" height="332">
+                  </div>
+                  <div class="swiper-slide">
+                      <img src="{% static 'img/3.jpg' %}" width="500" height="332">
+                  </div>
+                  <div class="swiper-slide">
+                      <img src="{% static 'img/4.jpg' %}" width="500" height="332">
+                  </div>
+                  <div class="swiper-slide">
+                      <img src="{% static 'img/5.jpg' %}" width="500" height="332">
+                  </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'img/6.JPG' %}" width="500" height="332">
+                  </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'img/7.JPG' %}" width="500" height="332">
+                  </div>
+                    <div class="swiper-slide">
+                      <img src="{% static 'img/8.GIF' %}" width="500" height="332">
+                  </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <!--首页功能导航-->
+        <div class="nav-btn">
+            <div class="ui container">
+                <div class="ui four column grid">
+                    <div class="column">
+                        <a href="https://www.qq.com"><img src="{% static 'icon/QQ.png' %}"></a>
+                    </div>
+                    <div class="column">
+                        <a href="https://weibo.com/"><img src="{% static 'icon/weibo.png' %}"></a>
+                    </div>
+                    <div class="column">
+                        <a href="https://weixin.qq.com//"><img src="{% static 'icon/wechat-fill.png' %}"></a>
+                    </div>
+                    <div class="column">
+                        <a href="https://twitter.com/"><img src="{% static 'icon/twitter.png' %}"></a>
+                    </div>
+                </div>
+
+                <div class="ui four column grid">
+                    <div class="column">
+                        <a href="https://www.alipay.com/"><img src="{% static 'icon/alipay-circle-fill.png' %}"></a>
+                    </div>
+                    <div class="column">
+                        <a href="https://www.taobao.com/"><img src="{% static 'icon/taobao-circle-fill.png' %}"></a>
+                    </div>
+                    <div class="column">
+                        <a href="https://translate.google.cn/"><img src="{% static 'icon/chrome-fill.png' %}"></a>
+                    </div>
+                    <div class="column">
+                        <a href="https://www.qq.com"><img src="{% static 'icon/QQ.png' %}"></a>
+                    </div>
+            </div>
+        </div>
+    {% endverbatim %}
+    <script src="{% static 'js/index.js' %}" charset="utf-8"></script>
+    <script src="{% static 'js/swiper.js' %}" charset="utf-8"></script>
+     <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper('.swiper-container', {
+          spaceBetween: 30,
+          centeredSlides: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      </script>
+  </div>
+</body>
+</html>
