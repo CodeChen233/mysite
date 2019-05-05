@@ -1,28 +1,10 @@
-from django.shortcuts import render, HttpResponse
-from website.models import Topmenu, Get_data
-from MCU.socket import start_socket
-from django.contrib.auth.models import User  # 用于登录
+from django.shortcuts import render, HttpResponse, redirect
+import socket
 # Create your views here.
 
 
 def home(request):
-    # topmenu =Topmenu.objects.all()   这里不需要再用这个方法了，这个交给vue.js做了,通过AJAX,在api.py里实现
-    get_data = Get_data.objects.all()  # 这层也可以不需要
-    # mydata = '110'
-
-    context = {
-        # 'topmenu': topmenu,
-        'get_data': get_data,        # 这里的数据是通过Django渲染到模板上去的
-        # 'mydata': mydata
-
-    }   # 创建的MODEL层数据库
-    return render(request, 'home.html', context)
-
-
-def MCU_data(request):
-    start_socket()
-    # return render(request, 'index1.html')
-    return HttpResponse(12)
+    return render(request, 'home.html')
 
 
 def now_time_data(request):
@@ -32,5 +14,36 @@ def now_time_data(request):
 def history_data(request):
     return render(request, 'history_data.html')
 
+
+def air_cdtion_ctr(request):
+    sk = socket.socket()
+    address = ('10.14.30.127', 60000)  # 公网
+    sk.connect(address)
+    if request.method == "POST":
+        floor = request.POST.get("floor", None)
+        room = request.POST.get("room", None)
+        status = request.POST.get("air_cdtin_ctr", None)
+
+        data = str([{'floor': floor}, {'room': room}, {'status': status}])
+
+        sk.send(bytes(data, 'utf8'))
+
+    sk.close()
+
+    return render(request, 'air_cdtion_ctr.html')
+
+
+def room_check(request):
+    if request.method == "POST":
+        floor = request.POST.get("floor", None)
+        room = request.POST.get("room", None)
+        data = int(floor) * 10 + int(room)
+        if data is None:
+            return render(request, 'room_check.html', {'error': '输入为空！'})
+        else:
+            url = '/admin/website/room/' + str(data)
+            return redirect(url)
+    else:
+        return render(request, 'room_check.html')
 
 

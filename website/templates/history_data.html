@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 {% load static %}
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Django</title>
-    <link rel="stylesheet" href="{% static 'css/semantic.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <title>历史数据</title>
+
+    <link rel="stylesheet" href="{% static 'css/website.css' %}">
     <link rel="stylesheet" href="{% static 'css/swiper.css' %}">
     <script src="{% static 'js/vue.js' %}" charset="utf-8"></script>
     <script src="{% static 'js/reqwest.js' %}" charset="utf-8"></script>
@@ -18,64 +17,33 @@
     <div id="index">
 
         <!--顶部导航栏-->
-        <div class="top_menu">
-            <div class="container">
-                <div class="ui three column grid">
-                    <div class="column"><a href="/home">首页</a></div>
-                    <div class="column"><a href="/now_time_data/">实时数据</a></div>
-                    <div class="column"><a href="/history_data/">历史记录</a></div>
-
-                </div>
-            </div>
-        </div>
-
-        <!--首页幻灯-->
-        <div id="banner">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                  <div v-for="item in banner" class="swiper-slide">
-                      <img :src="item.img" width=100% height=350 alt="">
-                  </div>
-                </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-            </div>
+        <div class="topmenu">
+            <ul class="nav">
+                    <li class="column"><a href="/home">首页</a></li>
+                    <li class="column"><a href="/now_time_data/">实时数据</a></li>
+                    <li class="column"><a href="/history_data/">历史数据</a></li>
+                    <li class="column"><a href="http://47.102.149.112/admin/">后台管理</a></li>
+            </ul>
         </div>
 
 
-        历史记录：
-        <div  v-for="item in get_data">{{ item.get_data }} 摄氏度</div>  <!--通过Vue渲染和Ajax得到数据库数据-->
+
+
+        <div id="box">
+            <div>
+                <div>历史数据：</div>
+                <div  v-for="item in get_data">{{ item.get_data }}</div>  <!--通过Vue渲染和Ajax得到数据库数据-->
+            </div>
+         </div>
 
 
 </div>
 
 {% endverbatim %}
-{#    通过Django渲染得到数据库数据：#}
-{#    {% for item in get_data %}   <!--通过Django渲染得到数据库数据-->#}
-{##}
-{#        <div>{{ item.get_data }}</div>#}
-{#    {% endfor %}#}
+
 
     <script src="{% static 'js/index.js' %}" charset="utf-8"></script>
-    <script src="{% static 'js/swiper.js' %}" charset="utf-8"></script>
-     <!-- Initialize Swiper -->
-      <script>
-        var swiper = new Swiper('.swiper-container', {
-          spaceBetween: 30,
-          centeredSlides: true,
-          autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-          },
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-        });
-      </script>
+
+
 </body>
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>空调管理</title>
+    <style>
+
+        input{
+            width: 80px;
+            height: 40px;
+        }
+    </style>
+</head>
+<link rel="stylesheet" href="{% static 'css/website.css' %}">
+<body>
+
+    <div id="index">
+        <div id="box" style="font-size: 50px">
+        <h2>
+            空调管理
+        </h2>
+        <br>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+           <div>
+               楼层号：
+                <select name="floor" style="width: 100px; height: 50px;">
+                    <option value="1">一楼</option>
+                    <option value="2">二楼</option>
+                    <option value="3">三楼</option>
+                </select>
+                <br class="b" />
+            </div>
+
+            <div>房间号：
+                <select name="room" style="width: 100px; height: 50px;">
+                    <option value="1">房间1</option>
+                    <option value="2">房间2</option>
+                    <option value="3">房间3</option>
+                    <option value="4">房间4</option>
+                    <option value="5">房间5</option>
+                    <option value="6">房间6</option>
+                    <option value="7">房间7</option>
+                    <option value="8">房间8</option>
+                    <option value="9">房间9</option>
+                    <option value="10">房间10</option>
+                </select>
+                <br class="b" />
+            </div>
+
+            <div>空调开：
+                <label for="r1"><input value="1" type="radio" name="air_cdtin_ctr"
+                                       id="r1"  \></label>
+                </div>
+            <div>空调关：
+                  <label for="r0"><input value="0" type="radio" name="air_cdtin_ctr"
+                                          id="r0" \></label>
+            </div>
+
+
+            <input  type="submit" value="提交" style="width: 100px; height: 50px;text-align: center" \>
+        </form>
+      </div>
+    </div>
+</body>
+</html>

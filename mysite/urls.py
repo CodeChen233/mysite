@@ -19,18 +19,17 @@ from django.conf import settings
 from django.conf.urls.static import static
 from website import views
 from website import api
-from MCU import socket
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', views.home),
     path('api/index', api.indexData),
-    # path('data/', socket.start_socket),
-    path('data/', views.MCU_data),
     path('now_time_data/', views.now_time_data),
     path('history_data/', views.history_data),
-    path('', include('auth_admin.urls'))
+    path('', include('auth_admin.urls')),
+    path('air_cdtion_ctr/', views.air_cdtion_ctr),
+    path('room_check/', views.room_check)
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

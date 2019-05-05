@@ -1,0 +1,65 @@
+﻿body{
+    margin: 0;
+    background-image: url("../img/壁纸.png");
+
+}
+
+#index{
+    position: relative;
+    width: 980px;
+    height: 1750px;
+
+
+}
+
+#index #box{
+    position: absolute;
+    top: 250px;
+    left: 85px;
+    width: 800px;
+    height: 400px;
+
+    text-align: center;
+    font-size: 60px;
+    font-family: 幼圆;
+}
+
+.btn{
+    width: 100px;
+    height: 80px;
+    margin-top: 110px;
+    font-size: 35px;
+}
+
+a{
+    text-decoration:none;
+    color:#1A01CC;
+}
+
+#index #register{
+    position: absolute;
+    top: 450px;
+    left: 85px;
+    width: 800px;
+    height: 400px;
+    text-align: left;
+    font-size: 30px;
+    font-family: 幼圆;
+}
+
+.helptext{
+    font-size: 25px;
+    margin: 0;
+    text-align: left;
+}
+
+#index #register form ul li{
+    text-align: left;
+}
+
+#index #register form p input{
+    height:60px;
+    width:305px;
+    margin-left: 80px;
+    font-size: 35px;
+}

@@ -1,12 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+{% load static %}
 <html>
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>注册成功</title>
+    <link rel="stylesheet" href="{% static 'css/auth_admin.css' %}">
 </head>
 
 <body>
-注册成功请回到主界面点击进行<a href="/">登录</a>
+<div style="margin: auto 300px; font-size: 43px">
+    <div style="margin-top: 750px">
+        注册成功,点击跳转到
+        <a href="/home">首页</a>
+    </div>
+</div>
 
 </body>
 </html>

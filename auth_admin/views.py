@@ -14,7 +14,7 @@ def My_login(request):
     if request.method == 'POST':
         user = authenticate(request, username=request.POST['用户名'], password=request.POST['密码'])
         if user is None:
-            return render(request, 'login.html', {'error': '用户名不存在！'})
+            return render(request, 'login.html', {'error': '用户名不存在或密码错误！'})
         else:
             login(request, user)
             return redirect('/home')

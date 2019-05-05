@@ -1,4 +1,4 @@
-import socket, pymysql
+﻿import socket, pymysql
 
 
 def start_socket():
@@ -8,12 +8,12 @@ def start_socket():
 
         # 为socket绑定IP和端口号
 
-        address = ('127.0.0.1', 8001)  # 代指本机IP地址
+        address = ('172.17.46.74', 8002)  # 代指本机IP地址
         sk.bind(address)
 
         # 服务器socket监听端口号请求，随时准备接收客户端发来的连接，这时候服务器的socket并没有被打开
 
-        sk.listen(3)    # 可等待的人数
+        sk.listen(1000)    # 可等待的人数
         print('waiting receive message..........')
         # MCU_list = []
         flag = True
